@@ -71,10 +71,11 @@ ImageView imageView;
         p.setVisibility(View.INVISIBLE);
         ar=load();
         ar.add("Choose a Bred");
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SearchActivity.this,android.R.layout.simple_spinner_item,ar) ;//ArrayAdapter.createFromResource(this,R.array.level, android.R.layout.simple_spinner_item);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SearchActivity.this,android.R.layout.simple_spinner_item,ar);//ArrayAdapter.createFromResource(this,R.array.level, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         s.setAdapter(adapter);
-       s.setOnItemSelectedListener(this);
+        s.setOnItemSelectedListener(this);//CODING INFLOW..**..
+        //s.setOnItemSelectedListener(this);
         isb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,6 +138,7 @@ ImageView imageView;
     public ArrayList<String> load()
     {
         ArrayList<String> ar=new ArrayList<String>();
+
         RequestQueue queue = Volley.newRequestQueue(this);
        url= "https://api.thedogapi.com/v1/breeds";
 
@@ -163,11 +165,8 @@ ImageView imageView;
         }
         );
         queue.add(stringRequest);
-
-
         return ar;
     }
-
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         //((TextView)view).setTextColor(Color.BLACK);
@@ -175,8 +174,7 @@ selectedbreed=parent.getItemAtPosition(position).toString();
 a=parent.getItemIdAtPosition(position);
         i=0;
         backarray.removeAll(backarray);
-display(a);
-    }
+display(a); }
 
 
     @Override

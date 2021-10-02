@@ -1,5 +1,5 @@
 package com.example.dogg;
-
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.solver.state.State;
@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Layout;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -45,9 +46,11 @@ import org.json.JSONObject;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
-
+import java.util.ListIterator;
 public class MainActivity<stringRequest> extends AppCompatActivity {
     ImageView imageView;
     ConstraintLayout l;
@@ -55,7 +58,7 @@ public class MainActivity<stringRequest> extends AppCompatActivity {
     Button b, favb;
     ProgressBar p;
     TextView t, ts;
-   static int i=0;
+     static int i=0;
     int i1,j, o, c, loadcount;
     ImageButton ib;
     String last, name, imperialweight, imperialheight, life_span, bred_for, bred_group, temperament;
@@ -87,6 +90,7 @@ String[] as;
         ib = (ImageButton) findViewById(R.id.favourite);
         t.setText("");
         load();
+
         ib.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -94,54 +98,52 @@ String[] as;
             }
         });
         favb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(MainActivity.this, FavActivity.class);
-                it.putStringArrayListExtra("favarray", fav);
-                startActivity(it);
+                                    @Override
+                                    public void onClick(View v) {
+                                        Intent it = new Intent(MainActivity.this, FavActivity.class);
+                                        it.putStringArrayListExtra("favarray", fav);
+                                        startActivity(it);
+                                    }
+                                });
+    l.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
+        @Override
+        public void onSwipeLeft() {
+
+            super.onSwipeLeft();
+            if (i == backarray.size() - 1) {
+                load();
+                i++;
+            } else {
+                i++;
+                func(backarray.get(i));
             }
-        });
-        l.setOnTouchListener(new OnSwipeTouchListener(MainActivity.this) {
-            @Override
-            public void onSwipeLeft() {
+        }
 
-                super.onSwipeLeft();
-                if (i == backarray.size() - 1) {
-                    load();
-                    i++;
-                } else {
-                    i++;
-
-
-                    func(backarray.get(i));
-                }
+        @Override
+        public void onSwipeRight() {
+            super.onSwipeRight();
+            t.setText("");
+            if (i > 0) {
+                i--;
+                func(backarray.get(i));
             }
+        }
 
-            @Override
-            public void onSwipeRight() {
-                super.onSwipeRight();
+        @Override
+        public void onDoubleClick() {
+            super.onDoubleClick();
+            if ((j == 0)) {
+                t.setText(lastarray.get(i));//GETTING INFO AT PARTICULAR INDEX IN A ARRAYLIST....
+                ts.setText("Double tap to disable");
+                j++;
+            } else {
+                ts.setText("Double Click to get Info\nSwipe left for more doggies");
                 t.setText("");
-                if (i > 0) {
-                    i--;
-                    func(backarray.get(i));
-                }
+                j = 0;
             }
+        }
 
-            @Override
-            public void onDoubleClick() {
-                super.onDoubleClick();
-                if ((j == 0)) {
-                    t.setText(lastarray.get(i));
-                    ts.setText("Double tap to disable");
-                    j++;
-                } else {
-                    ts.setText("Double Click to get Info\nSwipe left for more doggies");
-                    t.setText("");
-                    j = 0;
-                }
-            }
-
-        });
+    });
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,7 +173,6 @@ String[] as;
 
 public void load()
 {
-
 p.setVisibility(View.VISIBLE);
 ts.setText("");
     RequestQueue queue = Volley.newRequestQueue(this);
@@ -180,8 +181,7 @@ ts.setText("");
             new Response.Listener<JSONArray>() {
                 @Override
                 public void onResponse(JSONArray response) {
-                    try {
-                        
+                    try{
                          JSONObject temp=response.getJSONObject(0);
                         url1= temp.getString("url");
                         JSONArray j=(temp.getJSONArray("breeds"));
@@ -220,5 +220,4 @@ queue.add(stringRequest);
     public void onBackPressed(){
        finishAffinity();
     }
-
 }

@@ -1,5 +1,4 @@
 package com.example.dogg;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -38,7 +37,6 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
 public class FavActivity extends AppCompatActivity {
 int i=0;
 String s;
@@ -54,7 +52,7 @@ TextView t;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fav);
+        setContentView(R.layout.activity_fav);//JSON*********LISTARRAY
         StrictMode.setVmPolicy(builder.build());
         p=(ProgressBar)findViewById(R.id.progressBar2);
         t=(TextView)findViewById(R.id.textView2);
@@ -167,7 +165,6 @@ loads(i);}
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
     public Bitmap getBitmapFromView(View view){
         Bitmap b=Bitmap.createBitmap(view.getWidth(),view.getHeight(),Bitmap.Config.ARGB_8888);
