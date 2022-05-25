@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".details">
+
+    <ImageView
+        android:id="@+id/dogimage"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="serif"
+        android:textStyle="italic"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#046BEC"
+        android:elevation="20dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dogimage">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="40dp"
+            android:paddingLeft="20dp"
+            android:gravity=""
+            android:fontFamily="serif"
+            android:textStyle="italic"
+            android:text="Name: -"
+            android:textColor="#EF7A02"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dogimage"></TextView>
+
+        <TextView
+            android:id="@+id/breed"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:gravity=""
+            android:fontFamily="serif"
+            android:textStyle="italic"
+            android:text="Breed: -"
+            android:textColor="#EF7A02"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name"></TextView>
+
+        <TextView
+            android:id="@+id/temperament"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="160dp"
+            android:gravity=""
+            android:fontFamily="serif"
+            android:textStyle="italic"
+            android:text="Temperament: -"
+            android:textColor="#EF7A02"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/breed"></TextView>
+
+        <TextView
+            android:id="@+id/weight"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="230dp"
+            android:gravity=""
+            android:paddingLeft="20dp"
+            android:text="LifeSpan: -"
+            android:textColor="#EF7A02"
+            android:textSize="20dp"
+            android:fontFamily="serif"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/temperament"></TextView>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.dogg"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -32,6 +32,9 @@ dependencies {
 
     implementation "com.github.bumptech.glide:okhttp3-integration:4.12.0"
     implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.7.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.2'
+    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     testImplementation 'junit:junit:4.+'

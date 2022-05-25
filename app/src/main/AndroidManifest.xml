@@ -4,31 +4,29 @@
     package="com.example.dogg">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/dogicon"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@drawable/dogicon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Dogg">
-        <activity android:name=".FavActivity"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"></activity>
-        <activity android:name=".SearchActivity"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"></activity>
-        <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait"
-          tools:ignore="LockOrientationActivity"
-            >
+        android:theme="@style/Theme.Dogg"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".your_uploads"></activity>
+        <activity android:name=".upload" />
+        <activity android:name=".temporary" />
+        <activity android:name=".details" />
+        <activity android:name=".Listview">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
+
 </manifest>
