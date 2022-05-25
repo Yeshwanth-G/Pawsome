@@ -14,4 +14,4 @@ Rahul is a huge dog lover and his birthday is right around the corner. His frien
 |<img src="images/Screenshot_20220525_182718.jpg" height="500px">|<img src="images/Screenshot_20220525_183526.jpg" height="500px">|<img src="images/Screenshot_20220525_183517.jpg" height="500px">|
 | :--------: | :-----------: | :-------: |
 |<img src="images/Screenshot_20220525_183846.jpg" height="500px">|<img src="images/Screenshot_20220525_182932.jpg" height="500px">|<img src="images/Screenshot_20220525_183227.jpg" height="500px">|
-|<img src="images/Screenshot_20220525_183651.jpg" height="500px">|<img src="images/Screenshot_20220525_183818.jpg" height="500px">|
+|<img src="images/dogimage.PNG" height="500px">|<img src="images/Screenshot_20220525_183651.jpg" height="500px">|<img src="images/Screenshot_20220525_183818.jpg" height="500px">|
