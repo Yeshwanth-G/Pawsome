@@ -1,5 +1,4 @@
 package com.example.dogg;
-
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -11,11 +10,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.GlideException;
@@ -50,8 +47,6 @@ Context context;
             helperclass h=a.get(position);
             if(h.breeds!=null&&h.breeds.size()>0)holder.getDogname().setText(h.getBreeds().get(0).getName());
             else holder.getDogname().setVisibility(View.INVISIBLE);
-            Log.w(TAG,"Please bro:"+h.url);
-            Log.d("TAG","reyyyyy....");
             Glide.with(context).load(h.url).listener(new RequestListener<Drawable>() {
                 @Override
                 public boolean onLoadFailed(GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {

@@ -43,10 +43,8 @@ public class your_uploads extends AppCompatActivity {
             @Override
             public void onResponse(Call<List<helperclass>> call, Response<List<helperclass>> response) {
                 if(response.isSuccessful()){
-                    Log.d(TAG,"ochesaaa.....");
                     List<helperclass>lt=response.body();
                     for(helperclass h:lt){
-                        Log.d(TAG,"ochesaaa....."+h.url);
                         arr.add(h);
                     }
                     ad.notifyDataSetChanged();

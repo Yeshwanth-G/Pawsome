@@ -76,7 +76,6 @@ public class upload extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode,Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==10&&resultCode== Activity.RESULT_OK){
-            Log.d(TAG,"Nenu eedda");
              uri=data.getData();
             Path =RealPathUtil.getRealPath(upload.this,uri);
             File file=new File(Path);
@@ -88,7 +87,6 @@ public class upload extends AppCompatActivity {
         }
     }
     public void uploadimage(RequestBody body,RequestBody subid){
-        Log.d(TAG,"Nenu ochesaaa...");
         Retrofit retrofit=new Retrofit.Builder().baseUrl("https://api.thedogapi.com/v1/").addConverterFactory(GsonConverterFactory.create()).build();
         Retro_interface rt=retrofit.create(Retro_interface.class);
         Call<uploadresponse> call=rt.upload(body,subid,"dcf55151-0743-47d4-b745-8953f6feaf3b");
@@ -103,7 +101,6 @@ public class upload extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<uploadresponse> call, Throwable t) {
-                Log.d(TAG,"Endayya..."+uri.getPath()+"-"+Path+t.getMessage());
                 Toast.makeText(upload.this,"sorryy.."+t.getMessage(),Toast.LENGTH_LONG).show();
             }
         });

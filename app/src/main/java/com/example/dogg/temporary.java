@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
 import android.util.Log;
 import android.widget.Toast;
 
@@ -65,14 +66,12 @@ public class temporary extends AppCompatActivity {
             @Override
             public void onResponse(Call<helperclass> call, Response<helperclass> response) {
                 helperclass h=response.body();
-                Log.d(TAG,"Emaindhi...."+h.url);
                 arr.add(h);
                 ad.notifyDataSetChanged();
             }
 
             @Override
             public void onFailure(Call<helperclass> call, Throwable t) {
-                Log.d(TAG,"Emaindhi...."+t.getMessage());
             }
         });
     }
